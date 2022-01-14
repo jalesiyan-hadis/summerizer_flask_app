@@ -2,12 +2,13 @@ import argparse
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from flask import Flask
+from summerizer_flask.views import summarize
 
 
 def create_app(test_config=None):
-    # create and configure the app
+    """create and configure the app"""
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(SECRET_KEY="dev")
 
@@ -28,8 +29,6 @@ def create_app(test_config=None):
     @app.route("/hello")
     def hello():
         return "Hello, World!"
-
-    from views import summarize
 
     app.register_blueprint(summarize.bp)
     return app
