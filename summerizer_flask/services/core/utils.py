@@ -73,7 +73,7 @@ def load_config_section(section) -> Union[Dict, None]:
     Exception: if config.ini does not exist
     """
     config = configparser.ConfigParser()
-    assert len(config.read(CONFIG_ADDRESS)) > 0
+    assert len(config.read(CONFIG_ADDRESS)) > 0, 'Config file does not exist'
     if section in config.sections():
         return config[section]
     else:
