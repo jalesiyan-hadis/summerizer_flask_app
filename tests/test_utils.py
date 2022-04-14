@@ -21,17 +21,6 @@ class JsonifyContentTest(BaseTest):
         text_ = [self.TEXT, self.TEXT]
         self.jsonify_base_test(text_, self.json_template_multiple_key)
 
-    def test_load_config_section_success(self):
-        """Unittest for checking successful return"""
-        conf = utils.load_config_section("MODEL")
-        self.assertGreater(len(conf), 0)
-
-    def test_load_config_section_fail(self):
-        """Unittest for checking non existance section name"""
-        conf = utils.load_config_section("")
-        self.assertEqual(conf, None)
-
-
 class DetectLangTest(BaseTest):
     def test_detect_language(self):
         """Unittest for checking successful return"""
@@ -43,3 +32,19 @@ class DetectLangTest(BaseTest):
         self.TEXT = "Das ist auf Deutch. This is a mixed lang"
         with self.assertRaises(Exception):
            utils.detect_language(text=self.TEXT) 
+
+class LoadConfTest(BaseTest):
+    def test_load_config_section_none_existance_file(self):
+        """Unittest for checking non existance config file"""
+        with self.assertRaises(Exception):
+            utils.load_config_section("", conf_address="")
+        
+    def test_load_config_section_success(self):
+        """Unittest for checking successful return"""
+        conf = utils.load_config_section("MODEL")
+        self.assertGreater(len(conf), 0)
+
+    def test_load_config_section_fail(self):
+        """Unittest for checking non existance section name"""
+        conf = utils.load_config_section("")
+        self.assertEqual(conf, None)
