@@ -17,8 +17,5 @@ tox = "^3.25.0"
 black = {version = "^21.11b1", allow-prereleases = true}
 
 [build-system]
-requires = ["poetry-core>=1.0.0",
-            "setuptools >= 35.0.2",
-            "setuptools_scm >= 2.0.0, <3"]
-
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
