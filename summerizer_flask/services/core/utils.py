@@ -1,4 +1,4 @@
-from typing import Dict, Union
+from typing import Dict, Union,List
 from langdetect import detect_langs
 import configparser
 import os
@@ -6,19 +6,15 @@ import os
 CONFIG_ADDRESS = os.path.join(os.path.dirname(__file__), "config.ini")
 
 
-def jsonify_content(content_list: list):
-    """
-    Function for convert the list to the json format
-    Parameters
-    ----------
-    content_list : list
-        of strings.
-    dtype : list
+def jsonify_content(content_list: List[str])->dict:
+    """Function for convert the list to the json format
+    
 
-    Returns
-    -------
-    dict : dictionary
+    Args:
+        content_list (List[str]): _description_
 
+    Returns:
+        dict: _description_
     Examples
     --------
     >>> list_ = ["sample text1", "sample text2"]
@@ -27,6 +23,7 @@ def jsonify_content(content_list: list):
     {"summery_1":"sample text1",
      "summery_2":"sample text2"}
     """
+    assert isinstance(content_list,list), "content_list should be a list"
     tmp_dict = {}
     if len(content_list) > 1:
         for num, content in enumerate(content_list, start=1):
