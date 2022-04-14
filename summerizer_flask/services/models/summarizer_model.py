@@ -17,7 +17,6 @@ def summarize_text(text: str) -> Union[dict, str]:
         )
     except Exception as e:
         return str(e)
-    summerizer_obj = summarizer.Summarizer()
-    summerized_list = summerizer_obj.AwesomeFunction(text)
+    summerized_list = summarizer.AwesomeFunction(text)
     json_result = utils.jsonify_content(content_list=summerized_list)
     return json_result
