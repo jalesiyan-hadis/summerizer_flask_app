@@ -2,7 +2,7 @@ from base_test import BaseTest
 from summerizer_flask.services.core import utils
 
 
-class UtilsTest(BaseTest):
+class JsonifyContentTest(BaseTest):
     def jsonify_base_test(self, text_, result_tmp):
         json_result_ = utils.jsonify_content(content_list=text_)
         self.assertDictEqual(json_result_, result_tmp)
