@@ -12,7 +12,7 @@ class Summarizer:
         self.model = AutoModelForSeq2SeqLM.from_pretrained(CONF["model_name"])
         self.tokenizer = AutoTokenizer.from_pretrained(CONF["tokenizer_name"])
 
-    def AwesomeFunction(self, QueryText: str) -> "something":
+    def AwesomeFunction(self, QueryText: str) -> list:
         # TODO: It returns text with <s></s>. I should solve it
         inputs = self.tokenizer(QueryText, return_tensors="pt")
         prediction = self.model.generate(**inputs)
