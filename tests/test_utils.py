@@ -8,6 +8,10 @@ class UtilsTest(BaseTest):
         self.assertDictEqual(json_result_, result_tmp)
         self.assertEqual(len(json_result_), len(text_))
 
+    def test_bad_type_of_content_list(self):
+        "unittest for checking raising error in case of wrong arg type"
+        with self.assertRaises(Exception):
+            utils.jsonify_content(self.TEXT)
     def test_jsonify_one_content(self):
         """unit test for len(content_list)== 1"""
         self.jsonify_base_test([self.TEXT], self.json_template_one_key)
