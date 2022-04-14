@@ -57,7 +57,7 @@ def detect_language(text: str) -> str:
     return detected_language.lang
 
 
-def load_config_section(section) -> Union[Dict, None]:
+def load_config_section(section, conf_address=CONFIG_ADDRESS) -> Union[Dict, None]:
     """
     return specific Section from config.ini
     -------
@@ -73,7 +73,7 @@ def load_config_section(section) -> Union[Dict, None]:
     Exception: if config.ini does not exist
     """
     config = configparser.ConfigParser()
-    assert len(config.read(CONFIG_ADDRESS)) > 0, 'Config file does not exist'
+    assert len(config.read(conf_address)) > 0, 'Config file does not exist'
     if section in config.sections():
         return config[section]
     else:
