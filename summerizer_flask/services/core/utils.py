@@ -39,18 +39,14 @@ def detect_language(text: str) -> str:
     Function for recognizing language
     if accuracy>0.9 consider text with specific language otherwise it consider that as mixed language
 
-    Parameters
-    ----------
-    text : strings
-    dtype : str
+    Args:
+        text (str): _description_
 
-    Returns
-    -------
-    lang : str
-
+    Returns:
+        str: _description_
     Examples
     --------
-    >>> text = "sample text1
+    >>> text = "sample text1"
     >>> m = utils.detect_language(text)
     >>> m
     "en"
