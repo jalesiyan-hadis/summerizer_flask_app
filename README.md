@@ -13,5 +13,6 @@ Imagine, you want to implement a Restfull-API for [this text summarizing model](
   {"summary": "Summarized text"}
   ```
 
-- Setting up a CI/CD pipeline using **Github Actions** to keep this service healthy and maitainable (a.k.a production ready)
-- Writting a Git hook for running test to be sure new commits do not broke your API.(NOt Done)
+- Writing Unittest and Integration test
+- Setting up a CI/CD pipeline using **Github Actions** to keep this service healthy and maitainable (a.k.a production ready)(Not complete)
+- Writting a Git hook for running test to be sure new commits do not broke your API.(Not complete)
