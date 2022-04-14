@@ -1,10 +1,7 @@
 import argparse
 import os
-import sys
-
-# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from flask import Flask
-from summerizer_flask.views import summarize
+from views import summarize
 
 
 def create_app(test_config=None):
